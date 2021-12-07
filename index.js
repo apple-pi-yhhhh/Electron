@@ -1,5 +1,7 @@
 var fs = require('fs');
 var FilePath = "";
+var data = "てすと"
+
 var existence = false;
 try {
 	fs.statSync(FilePath);
@@ -8,10 +10,9 @@ try {
 	existence = false;
 }
 
+var content = new String();
+content = fs.readFileSync(FilePath, 'utf8');
 
+console.log(content)
 
-  var content = new String();
-  if(check(FilePath)) {
-    content = fs.readFileSync(FilePath, 'utf8');
-  };
-  return content;
+fs.appendFileSync(FilePath,data)
